@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Now - Downtown Fitness</title>
+    <link rel="stylesheet" href="style.css">
+    <script src=""></script>
+</head>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    background-image: url(/Assets/joinBg.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    animation: changeBackground 5s infinite alternate; 
+}
+
+@keyframes changeBackground {
+    0% {
+    background-image: url(/Assets/joinBg.jpg);
+    }
+    50% {
+    background-image: url(/Assets/joinbg2.jpg);
+    }
+    100% {
+    background-image: url(/Assets/joinbg3.jpg);
+    }
+}
+
+    </style>
+<body>
+    <div class="form-container">
+        <h1>Join Now</h1>
+        <form id="joinForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="number">Phone Number:</label>
+            <input type="tel" id="number" name="number" required>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="" disabled selected>Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" required>
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required>
+
+            <label for="plan">Select Plan:</label>
+            <select id="plan" name="plan" onchange="calculatePayment()" required>
+                <option value="" disabled selected>Select Plan</option>
+                <option value="basic">Basic - $25</option>
+                <option value="premium">Premium - $35</option>
+                <option value="pro">Pro - $45</option>
+            </select>
+
+            <label for="payment">Total Payment:</label>
+            <input type="text" id="payment" name="payment" readonly>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
